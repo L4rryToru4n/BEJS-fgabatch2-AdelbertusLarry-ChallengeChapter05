@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// https://stackoverflow.com/questions/71190942/prisma-how-to-point-two-fields-to-same-model
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id BigInt @id @default(autoincrement())
+  name String
+  email String @unique
+  password String?
+  googleId String?
+  isDeleted Boolean? @default(value: false)
+  bank_accounts BankAccounts[]
+  profiles Profiles?
+}
+
+model BankAccounts {
+  id BigInt @id @default(autoincrement())
+  user_id BigInt
+  bank_name String
+  bank_account_number BigInt @unique
+  balance Float
+  isDeleted Boolean? @default(value: false)
+  from_source_transfer Transactions[]
+  from_destination_transfer Transactions[] @relation(name: "destination_account")
+  user Users @relation(fields: [user_id], references: [id])
+
+}
+
+model Transactions {
+  id BigInt @id @default(autoincrement())
+  source_account_id BigInt
+  destination_account_id BigInt
+  amount Float
+  isDeleted Boolean? @default(value: false)
+  source_account BankAccounts @relation(fields: [source_account_id], references: [bank_account_number])
+  destination_account BankAccounts @relation(fields: [destination_account_id], references: [bank_account_number], name: "destination_account")
+}
+
+model Profiles {
+  id BigInt @id @default(autoincrement())
+  user_id BigInt @unique
+  identity_type String
+  identity_number String @unique
+  address String
+  isDeleted Boolean? @default(value: false)
+  user Users @relation(fields: [user_id], references: [id])
+}
