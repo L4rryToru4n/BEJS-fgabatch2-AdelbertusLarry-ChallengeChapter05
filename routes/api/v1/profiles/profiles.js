@@ -233,6 +233,7 @@ const profile = require('../../../../controllers/profiles.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetProfilesErrResponse'
+ * /profiles/create:
  *   post:
  *     summary: Create a new profile
  *     tags: [Profiles]
@@ -279,6 +280,7 @@ const profile = require('../../../../controllers/profiles.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetProfileErrResponse'
+ * /profiles/update/{id}:
  *   put:
  *    summary: Update the profile by the id
  *    tags: [Profiles]
@@ -308,6 +310,7 @@ const profile = require('../../../../controllers/profiles.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UpdateProfileErrResponse'
+ * /profiles/delete/{id}:
  *   delete:
  *     summary: Remove the profile by id
  *     tags: [Profiles]
