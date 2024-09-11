@@ -23,7 +23,6 @@ const user = require('../../../../controllers/users.controller');
  *           type: string
  *           description: The email address of the user
  *         password:
- *           type: string
  *           description: The password key of the user
  *         isDeleted:
  *           type: boolean
@@ -217,6 +216,7 @@ const user = require('../../../../controllers/users.controller');
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetUsersErrResponse'
+ * /users/create:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -263,6 +263,7 @@ const user = require('../../../../controllers/users.controller');
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetUserErrResponse'
+ * /users/update/{id}:
  *   put:
  *     summary: Update the user by the id
  *     tags: [Users]
@@ -292,6 +293,7 @@ const user = require('../../../../controllers/users.controller');
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UpdateUserErrResponse'
+ * /users/delete/{id}:
  *   delete:
  *     summary: Remove the user by id
  *     tags: [Users]
