@@ -233,6 +233,7 @@ const bank_account = require('../../../../controllers/bank_accounts.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetBankAccountsErrResponse'
+ * /bank_accounts/create:
  *   post:
  *     summary: Create a new bank account
  *     tags: [BankAccounts]
@@ -279,6 +280,7 @@ const bank_account = require('../../../../controllers/bank_accounts.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetBankAccountErrResponse'
+ * /bank_accounts/update/{id}:
  *   put:
  *    summary: Update the bank account by the id
  *    tags: [BankAccounts]
@@ -308,6 +310,7 @@ const bank_account = require('../../../../controllers/bank_accounts.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UpdateBankAccountErrResponse'
+ * /bank_accounts/delete/{id}:
  *   delete:
  *     summary: Remove the bank account by id
  *     tags: [BankAccounts]
