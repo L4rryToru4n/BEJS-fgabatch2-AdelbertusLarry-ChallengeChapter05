@@ -242,7 +242,7 @@ const transaction = require('../../../../controllers/transactions.controller')
  * /transactions/{id}:
  *   get:
  *     summary: Get the transaction by id
- *     tags: [BankAccounts]
+ *     tags: [Transactions]
  *     parameters:
  *       - in: path
  *         name: id

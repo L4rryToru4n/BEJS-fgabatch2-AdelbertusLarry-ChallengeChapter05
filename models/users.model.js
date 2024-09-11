@@ -23,7 +23,8 @@ const USERS = {
           email: true,
           password: false
         }
-      })
+      });
+      
       return result;
     } catch (err) {
       console.error(err.message);
