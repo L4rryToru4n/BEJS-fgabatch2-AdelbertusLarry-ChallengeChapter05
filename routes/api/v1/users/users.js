@@ -293,7 +293,7 @@ const user = require('../../../../controllers/users.controller');
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UpdateUserErrResponse'
- * /users/delete/{id}:
+ * /users/delete/{i}:
  *   delete:
  *     summary: Remove the user by id
  *     tags: [Users]
