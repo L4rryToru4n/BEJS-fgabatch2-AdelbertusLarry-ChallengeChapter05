@@ -217,6 +217,7 @@ const transaction = require('../../../../controllers/transactions.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetTransactionsErrResponse'
+ * /transactions/create:
  *   post:
  *     summary: Create a new transaction
  *     tags: [Transactions]
@@ -263,6 +264,7 @@ const transaction = require('../../../../controllers/transactions.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/GetTransactionErrResponse'
+ * /transactions/update/{id}:
  *   put:
  *    summary: Update the transaction by the id
  *    tags: [Transactions]
@@ -292,6 +294,7 @@ const transaction = require('../../../../controllers/transactions.controller')
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UpdateTransactionErrResponse'
+ * /transactions/delete/{id}:
  *   delete:
  *     summary: Remove the transaction by id
  *     tags: [Transactions]
