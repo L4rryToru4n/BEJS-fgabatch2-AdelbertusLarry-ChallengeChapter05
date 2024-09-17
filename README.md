@@ -69,7 +69,7 @@ can be accessed using the following uri:
 ## Setup
 In order to do demo, clone the project by typing this command into the terminal: 
 ```
-git clone https://github.com/L4rryToru4n/bankaccount-binar-academy-be-chapter-03.git
+git clone https://github.com/L4rryToru4n/BEJS-fgabatch2-AdelbertusLarry-ChallengeChapter05.git
 ```
 or download the project then extract the .zip file.
 
